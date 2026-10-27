@@ -1,0 +1,457 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Culture and Heritage | Explore Miagao</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #fff8ef;
+    color: #493323;
+    line-height: 1.7;
+}
+
+header {
+    background: #63391f;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 27px;
+}
+
+header p {
+    margin: 3px 0 0;
+    color: #f4dfc5;
+}
+
+nav {
+    background: #854e2f;
+    padding: 14px;
+    text-align: center;
+}
+
+nav a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 15px;
+    margin: 3px;
+    border-radius: 5px;
+}
+
+nav a:hover,
+nav a.active {
+    background: #c18a50;
+    color: white;
+}
+
+.hero {
+    min-height: 400px;
+    background:
+        linear-gradient(90deg, rgba(36,22,13,.82),
+        rgba(36,22,13,.15)),
+        url("https://images.unsplash.com/photo-1518998053901-5348d3961a04?auto=format&fit=crop&w=1800&q=85");
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    padding: 50px 8%;
+    color: white;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.hero h2 {
+    font-family: Georgia, serif;
+    font-size: clamp(38px, 6vw, 65px);
+    line-height: 1.1;
+    margin: 0 0 15px;
+}
+
+.hero p {
+    font-size: 19px;
+}
+
+.hero span {
+    color: #ffd59a;
+}
+
+main {
+    max-width: 1150px;
+    margin: auto;
+    padding: 45px 22px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.section-title h2 {
+    font-family: Georgia, serif;
+    font-size: 34px;
+    margin-bottom: 5px;
+    color: #704321;
+}
+
+.section-title p {
+    margin-top: 0;
+    color: #80664f;
+}
+
+.welcome {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+    align-items: center;
+    margin-bottom: 45px;
+}
+
+.welcome img {
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(75,45,25,.18);
+}
+
+.welcome h2,
+.card h3 {
+    color: #704321;
+    font-family: Georgia, serif;
+}
+
+.welcome h2 {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.tag {
+    display: inline-block;
+    background: #f0dfc9;
+    color: #704321;
+    padding: 5px 13px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.feature {
+    background: #f3e5d3;
+    padding: 28px;
+    border-radius: 14px;
+    margin-bottom: 35px;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 25px;
+    align-items: center;
+}
+
+.feature img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.feature h2 {
+    font-family: Georgia, serif;
+    color: #704321;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 18px rgba(75,45,25,.1);
+    transition: transform .3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card h3 {
+    font-size: 21px;
+    margin: 0 0 10px;
+}
+
+.card p {
+    margin-bottom: 0;
+}
+
+ul {
+    padding-left: 22px;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 30px;
+    background: #854e2f;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.button:hover {
+    background: #63391f;
+}
+
+.back {
+    text-align: center;
+    margin: 35px 0 10px;
+}
+
+footer {
+    background: #63391f;
+    color: white;
+    text-align: center;
+    padding: 22px;
+}
+
+footer p {
+    margin: 0;
+}
+
+@media (max-width: 800px) {
+    .welcome,
+    .feature {
+        grid-template-columns: 1fr;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    header {
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+@media (max-width: 550px) {
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        min-height: 330px;
+        padding: 30px 22px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .section-title h2 {
+        font-size: 28px;
+    }
+
+    main {
+        padding: 30px 16px;
+    }
+
+    .welcome img,
+    .feature img {
+        height: 250px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div>
+        <h1>Explore Miagao</h1>
+        <p>Discover Our History, Culture, and Traditions</p>
+    </div>
+</header>
+
+<nav>
+    <a href="index.html">HOME</a>
+    <a href="church.html">CHURCH</a>
+    <a href="beach.html">BEACHES</a>
+    <a href="nature.html">NATURE</a>
+    <a href="heritage.html" class="active">CULTURE</a>
+</nav>
+
+<section class="hero">
+    <div class="hero-content">
+        <h2>Culture and <span>Heritage</span></h2>
+        <p>Discover the rich history, colorful traditions,
+        and cultural treasures of Miagao, Iloilo.</p>
+    </div>
+</section>
+
+<main>
+
+    <section class="welcome">
+        <img
+            src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1000&q=85"
+            alt="Historic temple architecture representing cultural heritage">
+
+        <div>
+            <span class="tag">WELCOME TO MIAGAO</span>
+            <h2>Our Culture, Our Pride</h2>
+            <p>
+                Miagao is a municipality in Iloilo, Philippines,
+                known for its historical landmarks, religious
+                traditions, local customs, and strong community spirit.
+            </p>
+            <p>
+                Its heritage reflects the stories, beliefs, and
+                creativity passed down through generations.
+                These traditions continue to shape the identity
+                of the Miagaowanons.
+            </p>
+        </div>
+    </section>
+
+    <section class="section-title">
+        <h2>Discover Our Heritage</h2>
+        <p>Explore the traditions and treasures that make Miagao special.</p>
+    </section>
+
+    <section class="feature">
+        <div>
+            <span class="tag">HISTORICAL LANDMARK</span>
+            <h2>Miagao Church</h2>
+            <p>
+                Also known as the Santo Tomas de Villanueva Parish
+                Church, Miagao Church was completed in 1797.
+                It is famous for its unique Baroque architecture
+                and detailed stone carvings.
+            </p>
+            <p>
+                The church is part of the UNESCO World Heritage Site
+                known as the Baroque Churches of the Philippines.
+            </p>
+        </div>
+
+        <img
+            src="https://commons.wikimedia.org/wiki/Special:FilePath/Miagao%20Church.jpg"
+            alt="Miagao Church, a historic landmark in Iloilo">
+    </section>
+
+    <section class="cards">
+
+        <article class="card">
+            <img
+                src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=85"
+                alt="Traditional Filipino food">
+
+            <div class="card-content">
+                <h3>Local Food</h3>
+                <p>
+                    Explore Filipino and Ilonggo dishes offered by
+                    local eateries. Traditional food brings families
+                    together and helps preserve local food culture.
+                </p>
+            </div>
+        </article>
+
+        <article class="card">
+            <img
+                src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=800&q=85"
+                alt="Community festival celebration">
+
+            <div class="card-content">
+                <h3>Traditions and Celebrations</h3>
+                <p>
+                    Religious activities, festivals, and community
+                    gatherings help preserve the customs and
+                    traditions of Miagao across generations.
+                </p>
+            </div>
+        </article>
+
+        <article class="card">
+            <img
+                src="https://images.unsplash.com/photo-1452860606245-08befc0ff44b?auto=format&fit=crop&w=800&q=85"
+                alt="Handcrafted cultural items">
+
+            <div class="card-content">
+                <h3>Arts and Local Crafts</h3>
+                <p>
+                    Traditional craftsmanship represents the skills
+                    and creativity of local communities. Supporting
+                    local artisans helps keep these traditions alive.
+                </p>
+            </div>
+        </article>
+
+    </section>
+
+    <section class="feature" style="margin-top: 35px;">
+        <div>
+            <h2>Why Culture Matters</h2>
+            <p>
+                Protecting cultural heritage keeps the history
+                and identity of Miagao alive for future generations.
+            </p>
+            <ul>
+                <li>Preserves local history and traditions.</li>
+                <li>Strengthens community identity and pride.</li>
+                <li>Encourages cultural tourism.</li>
+                <li>Supports local businesses and artisans.</li>
+            </ul>
+        </div>
+
+        <img
+            src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1000&q=85"
+            alt="Historic architecture and cultural heritage">
+    </section>
+
+    <div class="back">
+        <a href="home.html" class="button">← BACK TO HOME</a>
+    </div>
+
+</main>
+
+<footer>
+    <p>&copy; 2026 Explore Miagao | Tourism Website</p>
+    <p>Celebrating the Heritage of Miagao, Iloilo</p>
+</footer>
+
+</body>
+</html>
+```
